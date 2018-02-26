@@ -1000,6 +1000,9 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 		nSubsidy = 250000000 * COIN;	// 1000 millions coins, that all pow coins
 		return nSubsidy + nFees;
 	}
+	else if (pindexBest->nHeight > 5) {
+		nSubsidy = .05 * COIN;
+	}
 	
     return nSubsidy + nFees;
 }
