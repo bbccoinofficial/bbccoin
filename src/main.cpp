@@ -992,17 +992,17 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
 	
-	
+	// Block #137998 (the fork Block).
     int64_t nSubsidy = 15 * COIN;
-
+	
     if(pindexBest->nHeight == 0)
 	{
 		nSubsidy = 250000000 * COIN;	// 1000 millions coins, that all pow coins
 		return nSubsidy + nFees;
 	}
-/*	else if (pindexBest->nHeight > 5) {
+	else if (pindexBest->nHeight > 137998) {
 		nSubsidy = .05 * COIN;
-	} */
+	} 
 	
     return nSubsidy + nFees;
 }
